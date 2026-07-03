@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank you — Maison à la Rose</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F6F0E7; --paper:#FBF7F1; --wine:#7C2F3B; --wine-deep:#5C2029;
+    --sage:#707A5E; --ink:#2A2320; --line:rgba(42,35,32,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--ivory);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+  }
+  .card{
+    max-width:520px;width:100%;background:var(--paper);border:1px solid var(--line);
+    padding:56px 44px;text-align:center;
+  }
+  .logo{font-family:'Fraunces',serif;font-style:italic;font-size:22px;color:var(--wine-deep);}
+  .icon{
+    width:56px;height:56px;border-radius:50%;border:1.5px solid var(--sage);
+    display:flex;align-items:center;justify-content:center;margin:30px auto 26px;
+  }
+  h1{font-family:'Fraunces',serif;font-weight:400;font-size:28px;color:var(--wine-deep);margin-bottom:16px;}
+  p{font-size:15px;line-height:1.75;color:#4a3f3a;}
+  .note{margin-top:22px;font-size:13px;color:#8a7a72;}
+  a.btn{
+    display:inline-block;margin-top:32px;padding:13px 28px;border:1px solid var(--wine);
+    color:var(--wine);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">Maison à la Rose</div>
+    <div class="icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#707A5E" stroke-width="1.6"><path d="M5 12l5 5L19 7"/></svg>
+    </div>
+    <h1 id="title">Thank you for your order</h1>
+    <p id="body">An email with your Canva link and full instructions is on its way to your inbox. Check your spam folder if you don't see it right away.</p>
+    <p class="note" id="note">Any question? Just reply to that email once it arrives.</p>
+    <a href="index.html" class="btn" id="backlink">Back to the shop</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('lang');
+
+    const texts = {
+      fr: {
+        title: 'Merci pour votre commande',
+        body: "Un e-mail contenant votre lien Canva et toutes les instructions arrive dans quelques instants dans votre boîte de réception. Pensez à vérifier vos spams si vous ne le voyez pas tout de suite.",
+        note: 'Une question ? Répondez simplement à cet e-mail dès sa réception.',
+        back: 'Retour à la boutique',
+        page: 'index-fr.html',
+        docTitle: 'Merci — Maison à la Rose',
+      },
+      es: {
+        title: 'Gracias por tu pedido',
+        body: "En unos minutos recibirás un correo con tu enlace de Canva y todas las instrucciones. Revisa tu carpeta de spam si no lo ves enseguida.",
+        note: '¿Alguna duda? Simplemente responde a ese correo en cuanto lo recibas.',
+        back: 'Volver a la tienda',
+        page: 'index-es.html',
+        docTitle: 'Gracias — Maison à la Rose',
+      },
+      it: {
+        title: 'Grazie per il tuo ordine',
+        body: "Tra pochi istanti riceverai un'email con il tuo link Canva e tutte le istruzioni. Controlla anche lo spam se non la vedi subito.",
+        note: 'Domande? Rispondi semplicemente a quell\'email non appena arriva.',
+        back: 'Torna al negozio',
+        page: 'index-it.html',
+        docTitle: 'Grazie — Maison à la Rose',
+      },
+    };
+
+    if (texts[lang]) {
+      const t = texts[lang];
+      document.documentElement.lang = lang;
+      document.title = t.docTitle;
+      document.getElementById('title').textContent = t.title;
+      document.getElementById('body').textContent = t.body;
+      document.getElementById('note').textContent = t.note;
+      document.getElementById('backlink').textContent = t.back;
+      document.getElementById('backlink').href = t.page;
+    }
+  </script>
+</body>
+</html>

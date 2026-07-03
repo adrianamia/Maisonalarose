@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison à la Rose — Templates Canva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F6F0E7;
+    --paper:#FBF7F1;
+    --wine:#7C2F3B;
+    --wine-deep:#5C2029;
+    --dust:#C99AA0;
+    --sage:#707A5E;
+    --ink:#2A2320;
+    --brass:#AD8A54;
+    --line:rgba(42,35,32,0.14);
+    --max:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Jost', sans-serif;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces', serif;}
+  .eyebrow{
+    font-family:'Jost',sans-serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--wine);
+    font-weight:500;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 40px;}
+
+  /* ---------- vine spine (signature element) ---------- */
+  #spine{
+    position:fixed;
+    left:26px;
+    top:0;
+    height:100%;
+    width:40px;
+    z-index:5;
+    pointer-events:none;
+  }
+  #spine svg{height:100%;width:100%;}
+  #spine path{
+    fill:none;
+    stroke:var(--wine);
+    stroke-width:1.2;
+    opacity:0.55;
+  }
+  @media (max-width: 900px){ #spine{display:none;} }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,240,231,0.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    max-width:var(--max);margin:0 auto;padding:20px 40px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:22px;
+    letter-spacing:0.01em;
+    color:var(--wine-deep);
+  }
+  .navlinks{display:flex;gap:36px;font-size:13px;letter-spacing:0.04em;}
+  .navlinks a{opacity:0.75;transition:opacity .25s;}
+  .navlinks a:hover{opacity:1;}
+  .btn{
+    display:inline-block;
+    padding:12px 26px;
+    border:1px solid var(--wine);
+    border-radius:2px;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--wine);
+    transition:all .3s ease;
+  }
+  .btn:hover{background:var(--wine);color:var(--paper);}
+  .btn.solid{background:var(--wine);color:var(--paper);}
+  .btn.solid:hover{background:var(--wine-deep);border-color:var(--wine-deep);}
+  .navcta{display:none;}
+  @media(min-width:760px){.navcta{display:inline-block;}}
+  .burger{display:none;}
+  @media(max-width:760px){
+    .navlinks{display:none;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:110px 0 90px;
+    position:relative;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:40px;
+    align-items:center;
+  }
+  @media(max-width:900px){ .hero .wrap{grid-template-columns:1fr;} }
+  .hero h1{
+    font-size:clamp(42px,6vw,74px);
+    line-height:1.02;
+    font-weight:400;
+    color:var(--wine-deep);
+  }
+  .hero h1 em{font-style:italic;color:var(--wine);}
+  .hero p.lead{
+    margin-top:26px;
+    max-width:440px;
+    font-size:17px;
+    line-height:1.7;
+    color:#4a3f3a;
+  }
+  .hero .actions{margin-top:38px;display:flex;gap:16px;flex-wrap:wrap;}
+  .rose-wrap{position:relative;}
+  #hero-rose{width:100%;height:auto;}
+  #hero-rose path{
+    fill:none;
+    stroke:var(--wine);
+    stroke-width:1.4;
+    stroke-linecap:round;
+    stroke-dasharray:1400;
+    stroke-dashoffset:1400;
+    animation:draw 2.6s ease forwards .3s;
+  }
+  #hero-rose .leaf{stroke:var(--sage);}
+  @keyframes draw{ to{stroke-dashoffset:0;} }
+
+  /* ---------- section shell ---------- */
+  section{padding:90px 0;position:relative;}
+  .divider{
+    width:100%;height:1px;background:var(--line);
+  }
+  .section-head{max-width:620px;margin-bottom:56px;}
+  .section-head h2{
+    margin-top:14px;
+    font-size:clamp(30px,3.4vw,44px);
+    font-weight:400;
+    color:var(--wine-deep);
+  }
+  .section-head p{margin-top:16px;font-size:15.5px;line-height:1.75;color:#4a3f3a;max-width:520px;}
+
+  /* ---------- maison / about ---------- */
+  .maison{background:var(--paper);}
+  .maison .grid{
+    display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;align-items:start;
+  }
+  @media(max-width:900px){.maison .grid{grid-template-columns:1fr;}}
+  .maison blockquote{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:26px;
+    line-height:1.5;
+    color:var(--wine-deep);
+    border-left:2px solid var(--wine);
+    padding-left:26px;
+  }
+  .maison .body p{font-size:15.5px;line-height:1.85;color:#4a3f3a;margin-bottom:18px;}
+
+  /* ---------- collections ---------- */
+  .collections .grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  @media(max-width:900px){.collections .grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.collections .grid{grid-template-columns:1fr;}}
+  .coll-card{
+    background:var(--ivory);
+    padding:36px 28px;
+    min-height:250px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    transition:background .35s ease;
+  }
+  .coll-card:hover{background:var(--paper);}
+  .coll-num{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--brass);}
+  .coll-card h3{font-size:23px;font-weight:400;margin-top:60px;color:var(--wine-deep);}
+  .coll-card p{font-size:13px;margin-top:10px;color:#6a5d57;line-height:1.6;}
+
+  /* ---------- featured products ---------- */
+  .featured{background:var(--paper);}
+  .prod-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:34px;
+  }
+  @media(max-width:900px){.prod-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.prod-grid{grid-template-columns:1fr;}}
+  .prod-card{
+    background:var(--ivory);
+    border:1px solid var(--line);
+  }
+  .prod-frame{
+    aspect-ratio:4/5;
+    position:relative;
+    overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    border-bottom:1px solid var(--line);
+  }
+  .prod-frame::before{
+    content:'';position:absolute;inset:0;
+    background:var(--frame-bg);
+  }
+  .prod-frame img{
+    width:100%;height:100%;object-fit:cover;object-position:top center;display:block;position:relative;z-index:1;
+  }
+  .prod-frame span{
+    position:relative;z-index:1;
+    font-family:'Fraunces',serif;font-style:italic;
+    font-size:15px;color:var(--frame-ink,var(--paper));
+    text-align:center;padding:0 20px;
+  }
+  .prod-info{padding:20px 22px 24px;}
+  .prod-info .cat{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);}
+  .prod-info h4{font-family:'Fraunces',serif;font-weight:500;font-size:19px;margin-top:8px;color:var(--wine-deep);}
+  .prod-info .row{display:flex;align-items:center;justify-content:space-between;margin-top:16px;}
+  .prod-info .desc{font-size:13px;line-height:1.65;color:#6a5d57;margin-top:10px;}
+  .price{font-size:15px;color:var(--ink);}
+  .prod-link{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--wine);border-bottom:1px solid var(--wine);padding-bottom:2px;}
+
+  /* ---------- process ---------- */
+  .atelier .steps{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:40px;
+  }
+  @media(max-width:800px){.atelier .steps{grid-template-columns:1fr;}}
+  .step{border-top:1px solid var(--wine);padding-top:18px;}
+  .step .eyebrow{color:var(--brass);}
+  .step h3{font-size:20px;font-weight:400;margin-top:10px;color:var(--wine-deep);}
+  .step p{font-size:14.5px;line-height:1.75;color:#4a3f3a;margin-top:10px;}
+
+  /* ---------- creator ---------- */
+  .creator{background:var(--paper);}
+  .creator-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:56px;align-items:center;}
+  @media(max-width:800px){.creator-grid{grid-template-columns:1fr;}}
+  .creator-frame{
+    aspect-ratio:4/5;
+    border:1px solid var(--line);
+    background:linear-gradient(160deg, var(--dust), var(--wine));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .creator-frame span{
+    font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--paper);text-align:center;
+  }
+
+  /* ---------- policy ---------- */
+  .policy{background:var(--ivory);}
+  .policy .box{
+    border:1px solid var(--line);background:var(--paper);
+    padding:44px 40px;max-width:760px;
+  }
+  .policy h3{font-family:'Fraunces',serif;font-weight:400;font-size:22px;color:var(--wine-deep);}
+  .policy p{margin-top:14px;font-size:14.5px;line-height:1.8;color:#4a3f3a;}
+
+  /* ---------- testimonials ---------- */
+  .testimonials{background:var(--wine-deep);color:var(--paper);}
+  .testimonials .section-head h2{color:var(--paper);}
+  .testimonials .section-head .eyebrow{color:var(--dust);}
+  .testimonials .section-head p{color:rgba(251,247,241,0.75);}
+  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
+  @media(max-width:900px){.t-grid{grid-template-columns:1fr;}}
+  .t-card p.quote{
+    font-family:'Fraunces',serif;font-style:italic;font-size:18px;line-height:1.6;
+  }
+  .t-card .who{margin-top:18px;font-size:12px;letter-spacing:0.06em;color:var(--dust);text-transform:uppercase;}
+
+  /* ---------- cta banner ---------- */
+  .cta-banner{
+    padding:110px 0;
+    text-align:center;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(124,47,59,0.06), transparent 60%),
+      var(--ivory);
+  }
+  .cta-banner h2{
+    font-size:clamp(32px,5vw,54px);font-weight:400;color:var(--wine-deep);
+    max-width:700px;margin:16px auto 0;
+  }
+  .cta-banner p{margin:20px auto 36px;max-width:460px;color:#4a3f3a;font-size:15.5px;line-height:1.7;}
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--wine-deep);color:rgba(251,247,241,0.8);
+    padding:64px 0 30px;
+  }
+  .foot-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;
+    padding-bottom:50px;border-bottom:1px solid rgba(251,247,241,0.15);
+  }
+  @media(max-width:700px){.foot-grid{grid-template-columns:1fr;gap:30px;}}
+  footer .logo{color:var(--paper);}
+  footer p.tag{margin-top:14px;font-size:14px;line-height:1.7;max-width:280px;color:rgba(251,247,241,0.65);}
+  footer h5{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--dust);margin-bottom:16px;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;font-size:14px;}
+  footer li a{opacity:0.82;transition:opacity .2s;}
+  footer li a:hover{opacity:1;}
+  .bottom{
+    padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-size:12px;color:rgba(251,247,241,0.5);
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    #hero-rose path{animation:none;stroke-dashoffset:0;}
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  :focus-visible{outline:2px solid var(--wine);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<div id="spine"><svg viewBox="0 0 40 2000" preserveAspectRatio="none"><path id="spine-path" d="M20,0 C5,120 35,220 20,340 C5,460 35,560 20,680 C5,800 35,900 20,1020 C5,1140 35,1240 20,1360 C5,1480 35,1580 20,1700 C5,1820 35,1920 20,2000"/></svg></div>
+
+<header>
+  <nav>
+    <a href="#top" class="logo">Maison à la Rose</a>
+    <div class="navlinks">
+      <a href="#maison">La Maison</a>
+      <a href="#collections">Collections</a>
+      <a href="#creatrice">Créatrice</a>
+      <a href="#atelier">L'Atelier</a>
+      <a href="#avis">Avis</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:22px;">
+      <span class="lang-switch" style="font-size:12px;letter-spacing:0.08em;opacity:0.75;">
+        <a href="index.html" style="opacity:0.6;">EN</a> ·
+        <a href="index-fr.html" style="opacity:1;font-weight:600;">FR</a> ·
+        <a href="index-es.html" style="opacity:0.6;">ES</a> ·
+        <a href="index-it.html" style="opacity:0.6;">IT</a>
+      </span>
+      <a href="#collections" class="btn navcta">Voir la boutique</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Templates Canva, faits à la main</p>
+        <h1>Des modèles <em>cousus</em><br>comme des étoffes fines.</h1>
+        <p class="lead">Maison à la Rose crée des templates Canva pour les marques, créatrices et petites entreprises qui veulent une présence visuelle qui ne ressemble à aucune autre. Chaque collection est composée, jamais assemblée.</p>
+        <div class="actions">
+          <a href="#collections" class="btn solid">Découvrir la boutique</a>
+          <a href="#collections" class="btn">Voir les collections</a>
+        </div>
+      </div>
+      <div class="rose-wrap">
+        <svg id="hero-rose" viewBox="0 0 420 460" xmlns="http://www.w3.org/2000/svg">
+          <path d="M210 90 C180 70 150 90 150 120 C150 150 185 165 210 150 C235 165 270 150 270 120 C270 90 240 70 210 90 Z"/>
+          <path d="M210 90 C195 75 180 80 178 100 C176 118 195 130 210 122"/>
+          <path d="M210 150 C200 175 215 195 210 220"/>
+          <path d="M210 220 C170 235 165 265 190 280" class="leaf"/>
+          <path d="M210 235 C250 250 255 280 230 295" class="leaf"/>
+          <path d="M210 220 L206 400"/>
+          <path d="M206 300 C170 300 155 275 165 250" class="leaf"/>
+          <path d="M206 350 C245 350 260 325 250 300" class="leaf"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="maison reveal" id="maison">
+    <div class="wrap grid">
+      <div>
+        <p class="eyebrow">La Maison</p>
+        <h2 class="serif" style="margin-top:14px;font-size:clamp(28px,3vw,38px);color:var(--wine-deep);font-weight:400;">Une atelier, pas une usine à modèles.</h2>
+      </div>
+      <div class="body">
+        <blockquote>« Un bon template ne se remarque pas — c'est la marque qui brille à travers lui. »</blockquote>
+        <p style="margin-top:28px;">Maison à la Rose est née d'une conviction simple : les outils visuels que nous utilisons tous les jours méritent le même soin qu'une robe sur-mesure. Pas de mise en page générique, pas de dégradé rose bonbon — chaque modèle est pensé comme une pièce de collection, avec sa propre typographie, sa propre respiration.</p>
+        <p>Chaque template est livré directement par e-mail après votre achat : ouvrez le lien, personnalisez-le dans Canva en quelques minutes, sans jamais perdre son élégance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="collections reveal" id="collections">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Les Collections</p>
+        <h2>Quatre univers, une seule signature.</h2>
+        <p>Chaque collection porte un numéro comme une saison de mode — l'ordre dans lequel la maison les a imaginées.</p>
+      </div>
+    </div>
+    <div class="wrap" style="padding:0;">
+      <div class="grid">
+        <div class="coll-card">
+          <span class="coll-num">Collection I</span>
+          <div><h3>Cartes d'anniversaire</h3><p>Des cartes pleines de peps, à imprimer ou à envoyer.</p></div>
+        </div>
+        <div class="coll-card">
+          <span class="coll-num">Collection II</span>
+          <div><h3>Invitations</h3><p>Des invitations élégantes pour les moments qui le méritent.</p></div>
+        </div>
+        <div class="coll-card">
+          <span class="coll-num">Collection III</span>
+          <div><h3>Ebooks</h3><p>Des modèles longs pour guides, workbooks et produits numériques.</p></div>
+        </div>
+        <div class="coll-card">
+          <span class="coll-num">Collection IV</span>
+          <div><h3>Planificateurs</h3><p>Un peu plus d'ordre dans le quotidien.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured reveal" id="featured">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">La Boutique</p>
+        <h2>Tous les templates.</h2>
+        <p>Neuf modèles, prêts à devenir les vôtres en quelques minutes.</p>
+      </div>
+      <div class="prod-grid">
+
+        <div class="prod-card">
+          <div class="prod-frame"><img src="images/floral-birthday-invite.png" alt="Fleurs & Fiesta invitation d'anniversaire florale" loading="lazy"></div>
+          <div class="prod-info">
+            <p class="cat">Collection II — Invitations</p>
+            <h4>Fleurs &amp; Fiesta</h4>
+            <p class="desc">Ouvrez le lien, remplacez le texte par la date et le lieu de votre événement, ajustez les couleurs si besoin, puis téléchargez en PDF ou partagez le lien numérique avec vos invités.</p>
+            <div class="row"><span class="price">5 €</span><a href="#" class="prod-link" data-product="floral-birthday-invite" onclick="buyProduct('floral-birthday-invite','fr');return false;">Acheter</a></div>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-frame"><img src="images/ebook-21page.png" alt="Ton Empire en 21 Pages, couverture de l'ebook" loading="lazy"></div>
+          <div class="prod-info">
+            <p class="cat">Collection III — Ebooks</p>
+            <h4>Ton Empire en 21 Pages</h4>
+            <p class="desc">Ouvrez le lien, remplissez chaque page avec votre propre contenu et vos images, puis exportez en PDF pour le vendre ou l'offrir à votre audience.</p>
+            <div class="row"><span class="price">19 €</span><a href="#" class="prod-link" data-product="ebook-21page" onclick="buyProduct('ebook-21page','fr');return false;">Acheter</a></div>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-frame"><img src="images/girly-pink-birthday-card.png" alt="Reine du Rose, carte d'anniversaire rose girly" loading="lazy"></div>
+          <div class="prod-info">
+            <p class="cat">Collection I — Cartes d'anniversaire</p>
+            <h4>Reine du Rose</h4>
+            <p class="desc">Ouvrez le lien, remplacez le prénom et le message, puis imprimez chez vous ou envoyez-la directement en carte numérique.</p>
+            <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="girly-pink-birthday-card" onclick="buyProduct('girly-pink-birthday-card','fr');return false;">Acheter</a></div>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-frame"><img src="images/beer-birthday-card.png" alt="Santé Bestie, carte d'anniversaire thème bière" loading="lazy"></div>
+          <div class="prod-info">
+            <p class="cat">Collection I — Cartes d'anniversaire</p>
+            <h4>Santé Bestie</h4>
+            <p class="desc">Ouvrez le lien, personnalisez le prénom et le message, puis imprimez ou envoyez-la en version numérique.</p>
+            <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="beer-birthday-card" onclick="buyProduct('beer-birthday-card','fr');return false;">Acheter</a></div>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-frame"><img src="images/floral-wedding-invitation.png" alt="Pour Toujours en Fleurs, invitation de mariage florale" loading="lazy"></div>
+          <div class="prod-info">
+            <p class="cat">Collection II — Invitations</p>
+            <h4>Pour Toujours en Fleurs</h4>
+            <p class="desc">Ouvrez le lien, ajoutez les prénoms des mariés, la date et le lieu, ajustez les couleurs si besoin, puis téléchargez en PDF ou imprimez chez un imprimeur.</p>
+            <div class="row"><span class="price">7 €</span><a href="#" class="prod-link" data-product="floral-wedding-invitation" onclick="buyProduct('floral-wedding-invitation','fr');return false;">Acheter</a></div>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-frame"><img src="images/ocean-birthday-card.png" alt="Vitamine Sea, carte d'anniversaire thème océan" loading="lazy"></div>
+          <div class="prod-info">
+            <p class="cat">Collection I — Cartes d'anniversaire</p>
+            <h4>Vitamine Sea</h4>
+            <p class="desc">Ouvrez le lien, remplacez le prénom et le message, puis imprimez chez vous ou envoyez-la en carte numérique.</p>
+            <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="ocean-birthday-card" onclick="buyProduct('ocean-birthday-card','fr');return false;">Acheter</a></div>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-frame"><img src="images/balloons-birthday-card.png" alt="Pluie de Confettis, carte d'anniversaire ballons colorés" loading="lazy"></div>
+          <div class="prod-info">
+            <p class="cat">Collection I — Cartes d'anniversaire</p>
+            <h4>Pluie de Confettis</h4>
+            <p class="desc">Ouvrez le lien, remplacez le prénom et le message, puis imprimez chez vous ou envoyez-la en carte numérique.</p>
+            <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="balloons-birthday-card" onclick="buyProduct('balloons-birthday-card','fr');return false;">Acheter</a></div>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-frame"><img src="images/weekly-meal-plan.png" alt="Ta Semaine, Version Glow-Up, planificateur de repas" loading="lazy"></div>
+          <div class="prod-info">
+            <p class="cat">Collection IV — Planificateurs</p>
+            <h4>Ta Semaine, Version Glow-Up</h4>
+            <p class="desc">Ouvrez le lien, remplissez vos repas pour chaque jour de la semaine, puis imprimez et affichez-le au frigo, ou gardez-le en version numérique sur votre tablette.</p>
+            <div class="row"><span class="price">4,50 €</span><a href="#" class="prod-link" data-product="weekly-meal-plan" onclick="buyProduct('weekly-meal-plan','fr');return false;">Acheter</a></div>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-frame"><img src="images/funny-cats-birthday-card.png" alt="Trop Chat Pour Toi, carte d'anniversaire chats rigolos" loading="lazy"></div>
+          <div class="prod-info">
+            <p class="cat">Collection I — Cartes d'anniversaire</p>
+            <h4>Trop Chat Pour Toi</h4>
+            <p class="desc">Ouvrez le lien, remplacez le prénom et le message, puis imprimez chez vous ou envoyez-la en carte numérique.</p>
+            <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="funny-cats-birthday-card" onclick="buyProduct('funny-cats-birthday-card','fr');return false;">Acheter</a></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="creator reveal" id="creatrice">
+    <div class="wrap creator-grid">
+      <div class="creator-frame">
+        <span>Portrait<br>à venir</span>
+      </div>
+      <div>
+        <p class="eyebrow">Derrière la Maison</p>
+        <h2 class="serif" style="margin-top:14px;font-size:clamp(28px,3vw,38px);color:var(--wine-deep);font-weight:400;">Rencontrez la créatrice.</h2>
+        <p style="margin-top:22px;font-size:15.5px;line-height:1.85;color:#4a3f3a;max-width:480px;">
+          [Votre prénom] a fondé Maison à la Rose après des années passées à créer des visuels pour des marques indépendantes. Fatiguée des templates génériques, elle a commencé à composer les siens — jusqu'à en faire une maison à part entière.
+        </p>
+        <p style="margin-top:16px;font-size:15.5px;line-height:1.85;color:#4a3f3a;max-width:480px;">
+          Aujourd'hui, chaque collection est encore dessinée à la main, une par une, avant de rejoindre la boutique.
+        </p>
+        <p style="margin-top:20px;font-size:13px;color:#8a7a72;">— Remplacez ce texte et le portrait par les vôtres.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="atelier reveal" id="atelier">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">L'Atelier</p>
+        <h2>Trois gestes, un seul résultat.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <p class="eyebrow">Choisir</p>
+          <h3>Une collection</h3>
+          <p>Parcourez les univers et trouvez celui qui correspond à votre marque.</p>
+        </div>
+        <div class="step">
+          <p class="eyebrow">Ouvrir</p>
+          <h3>Dans Canva</h3>
+          <p>Chaque modèle s'ouvre en un clic dans Canva, prêt à recevoir vos couleurs et vos mots.</p>
+        </div>
+        <div class="step">
+          <p class="eyebrow">Publier</p>
+          <h3>En quelques minutes</h3>
+          <p>Modifiez, exportez, publiez — sans jamais toucher à l'équilibre du design d'origine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials reveal" id="avis">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">On en parle</p>
+        <h2>Des mots de la communauté.</h2>
+      </div>
+      <div class="t-grid">
+        <div class="t-card">
+          <p class="quote">« Enfin des cartes d'anniversaire qui ne ressemblent pas à toutes les autres. Mon groupe d'amis est fan. »</p>
+          <p class="who">Léa, envoie des cartes depuis toujours</p>
+        </div>
+        <div class="t-card">
+          <p class="quote">« J'ai utilisé le modèle d'ebook 21 pages pour lancer mon premier guide numérique en un week-end. »</p>
+          <p class="who">Marc, créateur débutant</p>
+        </div>
+        <div class="t-card">
+          <p class="quote">« L'invitation de mariage correspondait parfaitement à notre style — les invités demandent encore où on l'a trouvée. »</p>
+          <p class="who">Inès, jeune mariée</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="policy reveal" id="politique">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Bon à savoir</p>
+        <h2>Politique de retour.</h2>
+      </div>
+      <div class="box">
+        <h3>Produits numériques — vente finale</h3>
+        <p>En raison de la nature numérique de nos templates Canva, tous les achats sont définitifs. Une fois le fichier téléchargé ou le lien Canva ouvert, nous ne pouvons ni annuler ni rembourser la commande.</p>
+        <p>Si un modèle présente un problème technique avéré (fichier corrompu, lien inactif), contactez-nous dans les 7 jours suivant l'achat à <a href="mailto:bonjour@maisonalarose.com" style="border-bottom:1px solid var(--wine);">bonjour@maisonalarose.com</a> — nous corrigeons ou remplaçons le fichier concerné.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner reveal">
+    <div class="wrap">
+      <p class="eyebrow">La boutique</p>
+      <h2>Toute la collection vous attend juste ici.</h2>
+      <p>Achat sécurisé, licence claire, votre design Canva livré directement par e-mail.</p>
+      <a href="#collections" class="btn solid">Voir les collections</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="logo">Maison à la Rose</a>
+        <p class="tag">Templates Canva composés comme des pièces de collection, pour les marques qui veulent être reconnues d'un coup d'œil.</p>
+      </div>
+      <div>
+        <h5>Explorer</h5>
+        <ul>
+          <li><a href="#maison">La Maison</a></li>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#creatrice">La Créatrice</a></li>
+          <li><a href="#politique">Politique de retour</a></li>
+          <li><a href="#featured">Les Favoris</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:bonjour@maisonalarose.com">bonjour@maisonalarose.com</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Pinterest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Maison à la Rose. Tous droits réservés.</span>
+      <span>Conçu avec soin.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---- Achat via Stripe Checkout ----
+  async function buyProduct(productId, lang){
+    const btns = document.querySelectorAll(`[data-product="${productId}"]`);
+    btns.forEach(b=>{
+      b.dataset.originalText = b.textContent;
+      b.textContent = 'Chargement…';
+      b.style.pointerEvents = 'none';
+      b.style.opacity = '0.6';
+    });
+    try{
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ productId, lang })
+      });
+      const data = await res.json();
+      if(data.url){
+        window.location.href = data.url;
+      } else {
+        throw new Error(data.error || 'Erreur inconnue');
+      }
+    } catch(err){
+      alert('Une erreur est survenue. Merci de réessayer dans un instant.');
+      btns.forEach(b=>{
+        b.textContent = b.dataset.originalText;
+        b.style.pointerEvents = 'auto';
+        b.style.opacity = '1';
+      });
+    }
+  }
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // spine progress tied to scroll
+  const spinePath = document.getElementById('spine-path');
+  if(spinePath){
+    const len = spinePath.getTotalLength();
+    spinePath.style.strokeDasharray = len;
+    spinePath.style.strokeDashoffset = len;
+    window.addEventListener('scroll', ()=>{
+      const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      spinePath.style.strokeDashoffset = len - (len * Math.min(scrolled,1));
+    });
+  }
+</script>
+
+</body>
+</html>
