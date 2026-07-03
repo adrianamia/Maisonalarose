@@ -409,19 +409,19 @@
     </div>
     <div class="wrap" style="padding:0;">
       <div class="grid">
-        <div class="coll-card">
+        <div class="coll-card" data-cat="cards" onclick="filterCollection('cards')" style="cursor:pointer;">
           <span class="coll-num">Collection I</span>
           <div><h3>Biglietti di Compleanno</h3><p>Biglietti divertenti da stampare o inviare, per ogni tipo di compleanno.</p></div>
         </div>
-        <div class="coll-card">
+        <div class="coll-card" data-cat="invitations" onclick="filterCollection('invitations')" style="cursor:pointer;">
           <span class="coll-num">Collection II</span>
           <div><h3>Inviti</h3><p>Inviti eleganti per i momenti che meritano di essere celebrati bene.</p></div>
         </div>
-        <div class="coll-card">
+        <div class="coll-card" data-cat="ebooks" onclick="filterCollection('ebooks')" style="cursor:pointer;">
           <span class="coll-num">Collection III</span>
           <div><h3>Ebook</h3><p>Template lunghi per guide, quaderni di lavoro e prodotti digitali.</p></div>
         </div>
-        <div class="coll-card">
+        <div class="coll-card" data-cat="planners" onclick="filterCollection('planners')" style="cursor:pointer;">
           <span class="coll-num">Collection IV</span>
           <div><h3>Planner</h3><p>Un po' più di ordine per la vita di tutti i giorni.</p></div>
         </div>
@@ -435,94 +435,95 @@
         <p class="eyebrow">Il Negozio</p>
         <h2>Tutti i template.</h2>
         <p>Nove design, pronti da personalizzare in pochi minuti.</p>
+        <a href="#" id="clearFilter" onclick="filterCollection(null);return false;" style="display:none;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--wine);border-bottom:1px solid var(--wine);padding-bottom:2px;margin-top:14px;">Mostra tutti ✕</a>
       </div>
-      <div class="prod-grid">
+      <div class="prod-grid" id="prodGrid">
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/floral-birthday-invite.png" alt="Fiori & Festa, invito di compleanno floreale" loading="lazy"></div>
+        <div class="prod-card" data-cat="invitations">
+          <a href="product.html?id=floral-birthday-invite&lang=it" style="display:block;"><div class="prod-frame"><img src="images/floral-birthday-invite.png" alt="Fiori & Festa, invito di compleanno floreale" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collezione II — Inviti</p>
-            <h4>Fiori &amp; Festa</h4>
+            <a href="product.html?id=floral-birthday-invite&lang=it" style="display:block;color:inherit;"><h4>Fiori &amp; Festa</h4></a>
             <p class="desc">Apri il link, inserisci data e luogo del tuo evento, personalizza i colori se vuoi, poi scarica il PDF o condividi il link digitale con i tuoi invitati.</p>
             <div class="row"><span class="price">5 €</span><a href="#" class="prod-link" data-product="floral-birthday-invite" onclick="buyProduct('floral-birthday-invite','it');return false;">Acquista</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/ebook-21page.png" alt="21 Pagine, Grandi Idee, copertina ebook" loading="lazy"></div>
+        <div class="prod-card" data-cat="ebooks">
+          <a href="product.html?id=ebook-21page&lang=it" style="display:block;"><div class="prod-frame"><img src="images/ebook-21page.png" alt="21 Pagine, Grandi Idee, copertina ebook" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collezione III — Ebook</p>
-            <h4>21 Pagine, Grandi Idee</h4>
+            <a href="product.html?id=ebook-21page&lang=it" style="display:block;color:inherit;"><h4>21 Pagine, Grandi Idee</h4></a>
             <p class="desc">Apri il link, riempi ciascuna delle 21 pagine con i tuoi contenuti e le tue immagini, poi esporta in PDF per venderlo o condividerlo con il tuo pubblico.</p>
             <div class="row"><span class="price">19 €</span><a href="#" class="prod-link" data-product="ebook-21page" onclick="buyProduct('ebook-21page','it');return false;">Acquista</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/girly-pink-birthday-card.png" alt="Regina del Rosa, biglietto di compleanno" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=girly-pink-birthday-card&lang=it" style="display:block;"><div class="prod-frame"><img src="images/girly-pink-birthday-card.png" alt="Regina del Rosa, biglietto di compleanno" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collezione I — Biglietti di Compleanno</p>
-            <h4>Regina del Rosa</h4>
+            <a href="product.html?id=girly-pink-birthday-card&lang=it" style="display:block;color:inherit;"><h4>Regina del Rosa</h4></a>
             <p class="desc">Apri il link, inserisci nome e messaggio, poi stampalo a casa o inviarlo subito come biglietto digitale.</p>
             <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="girly-pink-birthday-card" onclick="buyProduct('girly-pink-birthday-card','it');return false;">Acquista</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/beer-birthday-card.png" alt="Salute, Bestie, biglietto tema birra" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=beer-birthday-card&lang=it" style="display:block;"><div class="prod-frame"><img src="images/beer-birthday-card.png" alt="Salute, Bestie, biglietto tema birra" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collezione I — Biglietti di Compleanno</p>
-            <h4>Salute, Bestie</h4>
+            <a href="product.html?id=beer-birthday-card&lang=it" style="display:block;color:inherit;"><h4>Salute, Bestie</h4></a>
             <p class="desc">Apri il link, personalizza nome e messaggio, poi stampalo o inviarlo in versione digitale.</p>
             <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="beer-birthday-card" onclick="buyProduct('beer-birthday-card','it');return false;">Acquista</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/floral-wedding-invitation.png" alt="Fiorire Per Sempre, invito di matrimonio floreale" loading="lazy"></div>
+        <div class="prod-card" data-cat="invitations">
+          <a href="product.html?id=floral-wedding-invitation&lang=it" style="display:block;"><div class="prod-frame"><img src="images/floral-wedding-invitation.png" alt="Fiorire Per Sempre, invito di matrimonio floreale" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collezione II — Inviti</p>
-            <h4>Fiorire Per Sempre</h4>
+            <a href="product.html?id=floral-wedding-invitation&lang=it" style="display:block;color:inherit;"><h4>Fiorire Per Sempre</h4></a>
             <p class="desc">Apri il link, aggiungi i nomi degli sposi, data e luogo, personalizza i colori se vuoi, poi scarica il PDF o portalo in tipografia.</p>
             <div class="row"><span class="price">7 €</span><a href="#" class="prod-link" data-product="floral-wedding-invitation" onclick="buyProduct('floral-wedding-invitation','it');return false;">Acquista</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/ocean-birthday-card.png" alt="Vitamina Sea, biglietto tema oceano" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=ocean-birthday-card&lang=it" style="display:block;"><div class="prod-frame"><img src="images/ocean-birthday-card.png" alt="Vitamina Sea, biglietto tema oceano" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collezione I — Biglietti di Compleanno</p>
-            <h4>Vitamina Sea</h4>
+            <a href="product.html?id=ocean-birthday-card&lang=it" style="display:block;color:inherit;"><h4>Vitamina Sea</h4></a>
             <p class="desc">Apri il link, inserisci nome e messaggio, poi stampalo a casa o inviarlo come biglietto digitale.</p>
             <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="ocean-birthday-card" onclick="buyProduct('ocean-birthday-card','it');return false;">Acquista</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/balloons-birthday-card.png" alt="Pioggia di Coriandoli, biglietto con palloncini" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=balloons-birthday-card&lang=it" style="display:block;"><div class="prod-frame"><img src="images/balloons-birthday-card.png" alt="Pioggia di Coriandoli, biglietto con palloncini" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collezione I — Biglietti di Compleanno</p>
-            <h4>Pioggia di Coriandoli</h4>
+            <a href="product.html?id=balloons-birthday-card&lang=it" style="display:block;color:inherit;"><h4>Pioggia di Coriandoli</h4></a>
             <p class="desc">Apri il link, inserisci nome e messaggio, poi stampalo a casa o inviarlo come biglietto digitale.</p>
             <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="balloons-birthday-card" onclick="buyProduct('balloons-birthday-card','it');return false;">Acquista</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/weekly-meal-plan.png" alt="La Tua Settimana, Versione Glow-Up, planner settimanale" loading="lazy"></div>
+        <div class="prod-card" data-cat="planners">
+          <a href="product.html?id=weekly-meal-plan&lang=it" style="display:block;"><div class="prod-frame"><img src="images/weekly-meal-plan.png" alt="La Tua Settimana, Versione Glow-Up, planner settimanale" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collezione IV — Planner</p>
-            <h4>La Tua Settimana, Versione Glow-Up</h4>
+            <a href="product.html?id=weekly-meal-plan&lang=it" style="display:block;color:inherit;"><h4>La Tua Settimana, Versione Glow-Up</h4></a>
             <p class="desc">Apri il link, compila i tuoi pasti per ogni giorno della settimana, poi stampalo per il frigo o tienilo digitale sul tablet.</p>
             <div class="row"><span class="price">4,50 €</span><a href="#" class="prod-link" data-product="weekly-meal-plan" onclick="buyProduct('weekly-meal-plan','it');return false;">Acquista</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/funny-cats-birthday-card.png" alt="Miao Buon Compleanno, biglietto con gatti" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=funny-cats-birthday-card&lang=it" style="display:block;"><div class="prod-frame"><img src="images/funny-cats-birthday-card.png" alt="Miao Buon Compleanno, biglietto con gatti" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collezione I — Biglietti di Compleanno</p>
-            <h4>Miao Buon Compleanno</h4>
+            <a href="product.html?id=funny-cats-birthday-card&lang=it" style="display:block;color:inherit;"><h4>Miao Buon Compleanno</h4></a>
             <p class="desc">Apri il link, inserisci nome e messaggio, poi stampalo a casa o inviarlo come biglietto digitale.</p>
             <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="funny-cats-birthday-card" onclick="buyProduct('funny-cats-birthday-card','it');return false;">Acquista</a></div>
           </div>
@@ -689,6 +690,22 @@
         b.style.pointerEvents = 'auto';
         b.style.opacity = '1';
       });
+    }
+  }
+
+  // ---- Kategorie-Filter (Collections anklickbar) ----
+  function filterCollection(cat){
+    const cards = document.querySelectorAll('#prodGrid .prod-card');
+    const clearBtn = document.getElementById('clearFilter');
+    if(!cat){
+      cards.forEach(c => c.style.display = '');
+      clearBtn.style.display = 'none';
+    } else {
+      cards.forEach(c => {
+        c.style.display = (c.dataset.cat === cat) ? '' : 'none';
+      });
+      clearBtn.style.display = 'inline-block';
+      document.getElementById('featured').scrollIntoView({behavior:'smooth', block:'start'});
     }
   }
 

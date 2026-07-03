@@ -409,19 +409,19 @@
     </div>
     <div class="wrap" style="padding:0;">
       <div class="grid">
-        <div class="coll-card">
+        <div class="coll-card" data-cat="cards" onclick="filterCollection('cards')" style="cursor:pointer;">
           <span class="coll-num">Collection I</span>
           <div><h3>Birthday Cards</h3><p>Playful, print-or-send cards for every kind of birthday.</p></div>
         </div>
-        <div class="coll-card">
+        <div class="coll-card" data-cat="invitations" onclick="filterCollection('invitations')" style="cursor:pointer;">
           <span class="coll-num">Collection II</span>
           <div><h3>Invitations</h3><p>Elegant invites for the moments worth celebrating properly.</p></div>
         </div>
-        <div class="coll-card">
+        <div class="coll-card" data-cat="ebooks" onclick="filterCollection('ebooks')" style="cursor:pointer;">
           <span class="coll-num">Collection III</span>
           <div><h3>eBooks</h3><p>Long-form templates for guides, workbooks, and digital products.</p></div>
         </div>
-        <div class="coll-card">
+        <div class="coll-card" data-cat="planners" onclick="filterCollection('planners')" style="cursor:pointer;">
           <span class="coll-num">Collection IV</span>
           <div><h3>Planners</h3><p>A little more order for the everyday.</p></div>
         </div>
@@ -435,94 +435,95 @@
         <p class="eyebrow">The Shop</p>
         <h2>All the templates.</h2>
         <p>Nine designs, ready to make yours in minutes.</p>
+        <a href="#" id="clearFilter" onclick="filterCollection(null);return false;" style="display:none;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--wine);border-bottom:1px solid var(--wine);padding-bottom:2px;margin-top:14px;">Show all ✕</a>
       </div>
-      <div class="prod-grid">
+      <div class="prod-grid" id="prodGrid">
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/floral-birthday-invite.png" alt="Bloom & Bash floral birthday invitation template" loading="lazy"></div>
+        <div class="prod-card" data-cat="invitations">
+          <a href="product.html?id=floral-birthday-invite&lang=en" style="display:block;"><div class="prod-frame"><img src="images/floral-birthday-invite.png" alt="Bloom & Bash floral birthday invitation template" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collection II — Invitations</p>
-            <h4>Bloom &amp; Bash</h4>
+            <a href="product.html?id=floral-birthday-invite&lang=en" style="display:block;color:inherit;"><h4>Bloom &amp; Bash</h4></a>
             <p class="desc">Open the link, swap in your event's date and location, tweak the colors if you like, then download as a PDF or share the digital link with your guests.</p>
             <div class="row"><span class="price">€5</span><a href="#" class="prod-link" data-product="floral-birthday-invite" onclick="buyProduct('floral-birthday-invite','en');return false;">Buy</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/ebook-21page.png" alt="21 Pages, Big Ideas ebook template cover" loading="lazy"></div>
+        <div class="prod-card" data-cat="ebooks">
+          <a href="product.html?id=ebook-21page&lang=en" style="display:block;"><div class="prod-frame"><img src="images/ebook-21page.png" alt="21 Pages, Big Ideas ebook template cover" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collection III — eBooks</p>
-            <h4>21 Pages, Big Ideas</h4>
+            <a href="product.html?id=ebook-21page&lang=en" style="display:block;color:inherit;"><h4>21 Pages, Big Ideas</h4></a>
             <p class="desc">Open the link, fill each of the 21 pages with your own content and images, then export as a PDF to sell or share with your audience.</p>
             <div class="row"><span class="price">€19</span><a href="#" class="prod-link" data-product="ebook-21page" onclick="buyProduct('ebook-21page','en');return false;">Buy</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/girly-pink-birthday-card.png" alt="Pink It Up girly birthday card template" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=girly-pink-birthday-card&lang=en" style="display:block;"><div class="prod-frame"><img src="images/girly-pink-birthday-card.png" alt="Pink It Up girly birthday card template" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collection I — Birthday Cards</p>
-            <h4>Pink It Up</h4>
+            <a href="product.html?id=girly-pink-birthday-card&lang=en" style="display:block;color:inherit;"><h4>Pink It Up</h4></a>
             <p class="desc">Open the link, swap in the name and your message, then print it at home or send it straight away as a digital card.</p>
             <div class="row"><span class="price">€3,50</span><a href="#" class="prod-link" data-product="girly-pink-birthday-card" onclick="buyProduct('girly-pink-birthday-card','en');return false;">Buy</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/beer-birthday-card.png" alt="Cheers, Bestie beer birthday card template" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=beer-birthday-card&lang=en" style="display:block;"><div class="prod-frame"><img src="images/beer-birthday-card.png" alt="Cheers, Bestie beer birthday card template" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collection I — Birthday Cards</p>
-            <h4>Cheers, Bestie</h4>
+            <a href="product.html?id=beer-birthday-card&lang=en" style="display:block;color:inherit;"><h4>Cheers, Bestie</h4></a>
             <p class="desc">Open the link, personalize the name and message, then print it or send it as a digital card.</p>
             <div class="row"><span class="price">€3,50</span><a href="#" class="prod-link" data-product="beer-birthday-card" onclick="buyProduct('beer-birthday-card','en');return false;">Buy</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/floral-wedding-invitation.png" alt="Bloom Forever floral wedding invitation template" loading="lazy"></div>
+        <div class="prod-card" data-cat="invitations">
+          <a href="product.html?id=floral-wedding-invitation&lang=en" style="display:block;"><div class="prod-frame"><img src="images/floral-wedding-invitation.png" alt="Bloom Forever floral wedding invitation template" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collection II — Invitations</p>
-            <h4>Bloom Forever</h4>
+            <a href="product.html?id=floral-wedding-invitation&lang=en" style="display:block;color:inherit;"><h4>Bloom Forever</h4></a>
             <p class="desc">Open the link, add the couple's names, date and venue, adjust the colors if you like, then download as a PDF or send it to a print shop.</p>
             <div class="row"><span class="price">€7</span><a href="#" class="prod-link" data-product="floral-wedding-invitation" onclick="buyProduct('floral-wedding-invitation','en');return false;">Buy</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/ocean-birthday-card.png" alt="Vitamin Sea ocean themed birthday card template" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=ocean-birthday-card&lang=en" style="display:block;"><div class="prod-frame"><img src="images/ocean-birthday-card.png" alt="Vitamin Sea ocean themed birthday card template" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collection I — Birthday Cards</p>
-            <h4>Vitamin Sea</h4>
+            <a href="product.html?id=ocean-birthday-card&lang=en" style="display:block;color:inherit;"><h4>Vitamin Sea</h4></a>
             <p class="desc">Open the link, swap in the name and your message, then print it at home or send it as a digital card.</p>
             <div class="row"><span class="price">€3,50</span><a href="#" class="prod-link" data-product="ocean-birthday-card" onclick="buyProduct('ocean-birthday-card','en');return false;">Buy</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/balloons-birthday-card.png" alt="Confetti Drop colorful balloons birthday card template" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=balloons-birthday-card&lang=en" style="display:block;"><div class="prod-frame"><img src="images/balloons-birthday-card.png" alt="Confetti Drop colorful balloons birthday card template" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collection I — Birthday Cards</p>
-            <h4>Confetti Drop</h4>
+            <a href="product.html?id=balloons-birthday-card&lang=en" style="display:block;color:inherit;"><h4>Confetti Drop</h4></a>
             <p class="desc">Open the link, swap in the name and your message, then print it at home or send it as a digital card.</p>
             <div class="row"><span class="price">€3,50</span><a href="#" class="prod-link" data-product="balloons-birthday-card" onclick="buyProduct('balloons-birthday-card','en');return false;">Buy</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/weekly-meal-plan.png" alt="Meal Prep Glow-Up weekly meal planner template" loading="lazy"></div>
+        <div class="prod-card" data-cat="planners">
+          <a href="product.html?id=weekly-meal-plan&lang=en" style="display:block;"><div class="prod-frame"><img src="images/weekly-meal-plan.png" alt="Meal Prep Glow-Up weekly meal planner template" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collection IV — Planners</p>
-            <h4>Meal Prep Glow-Up</h4>
+            <a href="product.html?id=weekly-meal-plan&lang=en" style="display:block;color:inherit;"><h4>Meal Prep Glow-Up</h4></a>
             <p class="desc">Open the link, fill in your meals for each day of the week, then print it out for the fridge or keep it digital on your tablet.</p>
             <div class="row"><span class="price">€4,50</span><a href="#" class="prod-link" data-product="weekly-meal-plan" onclick="buyProduct('weekly-meal-plan','en');return false;">Buy</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/funny-cats-birthday-card.png" alt="Meow Happy Birthday funny cats birthday card template" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=funny-cats-birthday-card&lang=en" style="display:block;"><div class="prod-frame"><img src="images/funny-cats-birthday-card.png" alt="Meow Happy Birthday funny cats birthday card template" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Collection I — Birthday Cards</p>
-            <h4>Meow Happy Birthday</h4>
+            <a href="product.html?id=funny-cats-birthday-card&lang=en" style="display:block;color:inherit;"><h4>Meow Happy Birthday</h4></a>
             <p class="desc">Open the link, swap in the name and your message, then print it at home or send it as a digital card.</p>
             <div class="row"><span class="price">€3,50</span><a href="#" class="prod-link" data-product="funny-cats-birthday-card" onclick="buyProduct('funny-cats-birthday-card','en');return false;">Buy</a></div>
           </div>
@@ -689,6 +690,22 @@
         b.style.pointerEvents = 'auto';
         b.style.opacity = '1';
       });
+    }
+  }
+
+  // ---- Kategorie-Filter (Collections anklickbar) ----
+  function filterCollection(cat){
+    const cards = document.querySelectorAll('#prodGrid .prod-card');
+    const clearBtn = document.getElementById('clearFilter');
+    if(!cat){
+      cards.forEach(c => c.style.display = '');
+      clearBtn.style.display = 'none';
+    } else {
+      cards.forEach(c => {
+        c.style.display = (c.dataset.cat === cat) ? '' : 'none';
+      });
+      clearBtn.style.display = 'inline-block';
+      document.getElementById('featured').scrollIntoView({behavior:'smooth', block:'start'});
     }
   }
 

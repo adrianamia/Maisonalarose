@@ -409,19 +409,19 @@
     </div>
     <div class="wrap" style="padding:0;">
       <div class="grid">
-        <div class="coll-card">
+        <div class="coll-card" data-cat="cards" onclick="filterCollection('cards')" style="cursor:pointer;">
           <span class="coll-num">Collection I</span>
           <div><h3>Tarjetas de Cumpleaños</h3><p>Tarjetas divertidas para imprimir o enviar, para cualquier tipo de cumpleaños.</p></div>
         </div>
-        <div class="coll-card">
+        <div class="coll-card" data-cat="invitations" onclick="filterCollection('invitations')" style="cursor:pointer;">
           <span class="coll-num">Collection II</span>
           <div><h3>Invitaciones</h3><p>Invitaciones elegantes para los momentos que merecen celebrarse bien.</p></div>
         </div>
-        <div class="coll-card">
+        <div class="coll-card" data-cat="ebooks" onclick="filterCollection('ebooks')" style="cursor:pointer;">
           <span class="coll-num">Collection III</span>
           <div><h3>Ebooks</h3><p>Plantillas extensas para guías, cuadernos de trabajo y productos digitales.</p></div>
         </div>
-        <div class="coll-card">
+        <div class="coll-card" data-cat="planners" onclick="filterCollection('planners')" style="cursor:pointer;">
           <span class="coll-num">Collection IV</span>
           <div><h3>Planificadores</h3><p>Un poco más de orden para el día a día.</p></div>
         </div>
@@ -435,94 +435,95 @@
         <p class="eyebrow">La Tienda</p>
         <h2>Todas las plantillas.</h2>
         <p>Nueve diseños, listos para hacerlos tuyos en minutos.</p>
+        <a href="#" id="clearFilter" onclick="filterCollection(null);return false;" style="display:none;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--wine);border-bottom:1px solid var(--wine);padding-bottom:2px;margin-top:14px;">Ver todo ✕</a>
       </div>
-      <div class="prod-grid">
+      <div class="prod-grid" id="prodGrid">
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/floral-birthday-invite.png" alt="Flores & Fiesta, invitación de cumpleaños floral" loading="lazy"></div>
+        <div class="prod-card" data-cat="invitations">
+          <a href="product.html?id=floral-birthday-invite&lang=es" style="display:block;"><div class="prod-frame"><img src="images/floral-birthday-invite.png" alt="Flores & Fiesta, invitación de cumpleaños floral" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Colección II — Invitaciones</p>
-            <h4>Flores &amp; Fiesta</h4>
+            <a href="product.html?id=floral-birthday-invite&lang=es" style="display:block;color:inherit;"><h4>Flores &amp; Fiesta</h4></a>
             <p class="desc">Abre el enlace, cambia la fecha y el lugar de tu evento, ajusta los colores si quieres, y descárgalo en PDF o comparte el enlace digital con tus invitados.</p>
             <div class="row"><span class="price">5 €</span><a href="#" class="prod-link" data-product="floral-birthday-invite" onclick="buyProduct('floral-birthday-invite','es');return false;">Comprar</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/ebook-21page.png" alt="21 Páginas, Grandes Ideas, portada del ebook" loading="lazy"></div>
+        <div class="prod-card" data-cat="ebooks">
+          <a href="product.html?id=ebook-21page&lang=es" style="display:block;"><div class="prod-frame"><img src="images/ebook-21page.png" alt="21 Páginas, Grandes Ideas, portada del ebook" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Colección III — Ebooks</p>
-            <h4>21 Páginas, Grandes Ideas</h4>
+            <a href="product.html?id=ebook-21page&lang=es" style="display:block;color:inherit;"><h4>21 Páginas, Grandes Ideas</h4></a>
             <p class="desc">Abre el enlace, completa cada una de las 21 páginas con tu propio contenido e imágenes, y expórtalo en PDF para venderlo o compartirlo con tu audiencia.</p>
             <div class="row"><span class="price">19 €</span><a href="#" class="prod-link" data-product="ebook-21page" onclick="buyProduct('ebook-21page','es');return false;">Comprar</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/girly-pink-birthday-card.png" alt="Reina del Rosa, tarjeta de cumpleaños" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=girly-pink-birthday-card&lang=es" style="display:block;"><div class="prod-frame"><img src="images/girly-pink-birthday-card.png" alt="Reina del Rosa, tarjeta de cumpleaños" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Colección I — Tarjetas de Cumpleaños</p>
-            <h4>Reina del Rosa</h4>
+            <a href="product.html?id=girly-pink-birthday-card&lang=es" style="display:block;color:inherit;"><h4>Reina del Rosa</h4></a>
             <p class="desc">Abre el enlace, cambia el nombre y el mensaje, e imprímela en casa o envíala directamente como tarjeta digital.</p>
             <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="girly-pink-birthday-card" onclick="buyProduct('girly-pink-birthday-card','es');return false;">Comprar</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/beer-birthday-card.png" alt="Salud, Bestie, tarjeta de cumpleaños temática cerveza" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=beer-birthday-card&lang=es" style="display:block;"><div class="prod-frame"><img src="images/beer-birthday-card.png" alt="Salud, Bestie, tarjeta de cumpleaños temática cerveza" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Colección I — Tarjetas de Cumpleaños</p>
-            <h4>Salud, Bestie</h4>
+            <a href="product.html?id=beer-birthday-card&lang=es" style="display:block;color:inherit;"><h4>Salud, Bestie</h4></a>
             <p class="desc">Abre el enlace, personaliza el nombre y el mensaje, e imprímela o envíala en versión digital.</p>
             <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="beer-birthday-card" onclick="buyProduct('beer-birthday-card','es');return false;">Comprar</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/floral-wedding-invitation.png" alt="Florecer Para Siempre, invitación de boda floral" loading="lazy"></div>
+        <div class="prod-card" data-cat="invitations">
+          <a href="product.html?id=floral-wedding-invitation&lang=es" style="display:block;"><div class="prod-frame"><img src="images/floral-wedding-invitation.png" alt="Florecer Para Siempre, invitación de boda floral" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Colección II — Invitaciones</p>
-            <h4>Florecer Para Siempre</h4>
+            <a href="product.html?id=floral-wedding-invitation&lang=es" style="display:block;color:inherit;"><h4>Florecer Para Siempre</h4></a>
             <p class="desc">Abre el enlace, añade los nombres de la pareja, la fecha y el lugar, ajusta los colores si quieres, y descárgalo en PDF o llévalo a una imprenta.</p>
             <div class="row"><span class="price">7 €</span><a href="#" class="prod-link" data-product="floral-wedding-invitation" onclick="buyProduct('floral-wedding-invitation','es');return false;">Comprar</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/ocean-birthday-card.png" alt="Vitamina Sea, tarjeta de cumpleaños temática océano" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=ocean-birthday-card&lang=es" style="display:block;"><div class="prod-frame"><img src="images/ocean-birthday-card.png" alt="Vitamina Sea, tarjeta de cumpleaños temática océano" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Colección I — Tarjetas de Cumpleaños</p>
-            <h4>Vitamina Sea</h4>
+            <a href="product.html?id=ocean-birthday-card&lang=es" style="display:block;color:inherit;"><h4>Vitamina Sea</h4></a>
             <p class="desc">Abre el enlace, cambia el nombre y el mensaje, e imprímela en casa o envíala como tarjeta digital.</p>
             <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="ocean-birthday-card" onclick="buyProduct('ocean-birthday-card','es');return false;">Comprar</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/balloons-birthday-card.png" alt="Lluvia de Confeti, tarjeta de cumpleaños con globos" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=balloons-birthday-card&lang=es" style="display:block;"><div class="prod-frame"><img src="images/balloons-birthday-card.png" alt="Lluvia de Confeti, tarjeta de cumpleaños con globos" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Colección I — Tarjetas de Cumpleaños</p>
-            <h4>Lluvia de Confeti</h4>
+            <a href="product.html?id=balloons-birthday-card&lang=es" style="display:block;color:inherit;"><h4>Lluvia de Confeti</h4></a>
             <p class="desc">Abre el enlace, cambia el nombre y el mensaje, e imprímela en casa o envíala como tarjeta digital.</p>
             <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="balloons-birthday-card" onclick="buyProduct('balloons-birthday-card','es');return false;">Comprar</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/weekly-meal-plan.png" alt="Tu Semana, Versión Glow-Up, planificador semanal" loading="lazy"></div>
+        <div class="prod-card" data-cat="planners">
+          <a href="product.html?id=weekly-meal-plan&lang=es" style="display:block;"><div class="prod-frame"><img src="images/weekly-meal-plan.png" alt="Tu Semana, Versión Glow-Up, planificador semanal" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Colección IV — Planificadores</p>
-            <h4>Tu Semana, Versión Glow-Up</h4>
+            <a href="product.html?id=weekly-meal-plan&lang=es" style="display:block;color:inherit;"><h4>Tu Semana, Versión Glow-Up</h4></a>
             <p class="desc">Abre el enlace, rellena tus comidas para cada día de la semana, e imprímelo para la nevera o mantenlo digital en tu tablet.</p>
             <div class="row"><span class="price">4,50 €</span><a href="#" class="prod-link" data-product="weekly-meal-plan" onclick="buyProduct('weekly-meal-plan','es');return false;">Comprar</a></div>
           </div>
         </div>
 
-        <div class="prod-card">
-          <div class="prod-frame"><img src="images/funny-cats-birthday-card.png" alt="Miau Feliz Cumpleaños, tarjeta de cumpleaños con gatos" loading="lazy"></div>
+        <div class="prod-card" data-cat="cards">
+          <a href="product.html?id=funny-cats-birthday-card&lang=es" style="display:block;"><div class="prod-frame"><img src="images/funny-cats-birthday-card.png" alt="Miau Feliz Cumpleaños, tarjeta de cumpleaños con gatos" loading="lazy"></div></a>
           <div class="prod-info">
             <p class="cat">Colección I — Tarjetas de Cumpleaños</p>
-            <h4>Miau Feliz Cumpleaños</h4>
+            <a href="product.html?id=funny-cats-birthday-card&lang=es" style="display:block;color:inherit;"><h4>Miau Feliz Cumpleaños</h4></a>
             <p class="desc">Abre el enlace, cambia el nombre y el mensaje, e imprímela en casa o envíala como tarjeta digital.</p>
             <div class="row"><span class="price">3,50 €</span><a href="#" class="prod-link" data-product="funny-cats-birthday-card" onclick="buyProduct('funny-cats-birthday-card','es');return false;">Comprar</a></div>
           </div>
@@ -689,6 +690,22 @@
         b.style.pointerEvents = 'auto';
         b.style.opacity = '1';
       });
+    }
+  }
+
+  // ---- Kategorie-Filter (Collections anklickbar) ----
+  function filterCollection(cat){
+    const cards = document.querySelectorAll('#prodGrid .prod-card');
+    const clearBtn = document.getElementById('clearFilter');
+    if(!cat){
+      cards.forEach(c => c.style.display = '');
+      clearBtn.style.display = 'none';
+    } else {
+      cards.forEach(c => {
+        c.style.display = (c.dataset.cat === cat) ? '' : 'none';
+      });
+      clearBtn.style.display = 'inline-block';
+      document.getElementById('featured').scrollIntoView({behavior:'smooth', block:'start'});
     }
   }
 
